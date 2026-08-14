@@ -20,7 +20,7 @@ analytics-engine/
 Requires Python 3.9+.
 
 ```bash
-git clone <https://github.com/YASHASSHETTYYY/cliperacr-analytic-engine.git>
+git clone <https://github.com/YASHASSHETTYYY/cliperact-analytic-engine.git>
 cd analytics-engine
 
 python3 -m venv venv
