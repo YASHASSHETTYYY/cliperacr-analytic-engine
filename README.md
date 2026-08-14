@@ -88,10 +88,4 @@ Full rationale is in `engineering_decisions.md`; the short version:
 - Events missing `user_id` are excluded from user-scoped metrics (DAU) but retained for session- and event-level metrics, since an unauthenticated event still belongs to a real session.
 - `device` is treated as a per-event attribute, not a per-session one — 160 of 164 sessions contain more than one distinct device value, so assuming one device per session would be inaccurate for this dataset.
 
-## Future Improvements
 
-- Export metrics to JSON/CSV in addition to stdout, for downstream dashboarding.
-- Add a `pytest` suite with fixed input/output fixtures to regression-test each metric.
-- Add CLI arguments for date-range filtering and configurable top-N interaction counts.
-- Persist the cleaned dataset (post-filtering) to a local SQLite or Parquet file so the SQL queries and Python engine can run against an identical, already-validated source of truth.
-- Compute a session-level "primary device" (e.g. mode of device per session) alongside the current event-level device share, since both views answer slightly different product questions.
